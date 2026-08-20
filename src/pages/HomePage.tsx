@@ -1,81 +1,52 @@
 import { Link } from 'react-router-dom';
 import { CompanyMap } from '../components/CompanyMap';
 import { SecurityPanel } from '../components/SecurityPanel';
-import { Card } from '../components/ui/Card';
+
+const qualities = [
+  ['Keyboard first', 'Command palette, skip links and visible focus states keep high-frequency paths fast without a mouse.'],
+  ['Adaptive density', 'Comfortable and compact views persist locally while preserving the same semantic content.'],
+  ['Accessible data viz', 'Charts pair visual encoding with human-readable summaries and non-visual equivalents.'],
+  ['Responsive by design', 'Navigation, cards, tables and filters reflow instead of shrinking desktop assumptions.'],
+];
 
 export function HomePage() {
   return (
     <>
       <main id="main">
-        <section className="relative overflow-hidden border-b border-slate-200 dark:border-slate-800">
-          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_10%_10%,rgba(37,99,235,.12),transparent_30%),radial-gradient(circle_at_90%_20%,rgba(6,182,212,.10),transparent_28%)]" />
-          <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 lg:grid-cols-[1.15fr_.85fr] lg:items-center lg:px-8 lg:py-24">
+        <section className="relative overflow-hidden border-b border-violet-100 dark:border-violet-950">
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_12%_14%,rgba(124,58,237,.18),transparent_30%),radial-gradient(circle_at_82%_14%,rgba(34,211,238,.16),transparent_28%),linear-gradient(180deg,#faf9ff,#f7f5ff_55%,#f8fafc)] dark:bg-[radial-gradient(circle_at_12%_14%,rgba(124,58,237,.26),transparent_30%),radial-gradient(circle_at_82%_14%,rgba(34,211,238,.16),transparent_28%),linear-gradient(180deg,#020617,#08071b_55%,#020617)]" />
+          <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:px-8 lg:py-24">
             <div>
-              <div className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-bold uppercase tracking-[.18em] text-blue-700 dark:border-blue-900 dark:bg-blue-950 dark:text-blue-300">
-                Global company intelligence SaaS
-              </div>
-              <h1 className="mt-5 max-w-4xl text-5xl font-black tracking-[-.045em] text-slate-950 sm:text-6xl dark:text-white">
-                Understand companies through one secure, explainable workspace.
-              </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">
-                Explore 100 local company profiles across 20 markets, map risk signals, compare fundamentals
-                and drill into classified insight tabs for financials, operations, security, people and events.
-              </p>
+              <div className="inline-flex rounded-full border border-violet-200 bg-white/70 px-3 py-1 text-xs font-black uppercase tracking-[.2em] text-violet-700 shadow-sm backdrop-blur dark:border-violet-900 dark:bg-violet-950/40 dark:text-violet-200">Frontend engineering showcase</div>
+              <h1 className="mt-6 max-w-4xl text-5xl font-black tracking-[-.055em] text-slate-950 sm:text-6xl dark:text-white">Company intelligence, designed for speed, clarity and every input mode.</h1>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">A data-heavy React workspace that demonstrates adaptive layouts, resilient UI state, accessible interaction patterns, visual analytics and a production-grade design system without sacrificing the full CompanyScope workflow.</p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link
-                  className="rounded-xl bg-slate-950 px-5 py-3 font-semibold text-white shadow-sm transition hover:-translate-y-0.5 dark:bg-white dark:text-slate-950"
-                  to="/register"
-                >
-                  Create workspace
-                </Link>
-                <Link
-                  className="rounded-xl border border-slate-200 bg-white px-5 py-3 font-semibold text-slate-800 shadow-sm dark:border-slate-700 dark:bg-slate-900 dark:text-white"
-                  to="/dashboard"
-                >
-                  Explore product
-                </Link>
+                <Link className="rounded-2xl bg-violet-600 px-5 py-3 font-bold text-white shadow-lg shadow-violet-500/20 transition hover:-translate-y-0.5 hover:bg-violet-700" to="/register">Open adaptive workspace</Link>
+                <Link className="rounded-2xl border border-violet-200 bg-white/70 px-5 py-3 font-bold text-slate-800 shadow-sm backdrop-blur hover:bg-white dark:border-violet-900 dark:bg-slate-900/70 dark:text-white" to="/companies/northstar-berlin-security/overview">Inspect detail UX</Link>
               </div>
+              <p className="mt-4 text-xs font-semibold text-slate-400">Tip: press <kbd className="rounded bg-white px-1.5 py-0.5 shadow-sm dark:bg-slate-900">⌘/Ctrl K</kbd> anywhere.</p>
             </div>
 
-            <Card className="relative overflow-hidden p-6">
-              <div className="absolute right-0 top-0 size-28 translate-x-10 -translate-y-10 rounded-full bg-blue-500/10 blur-2xl" />
-              <p className="text-xs font-bold uppercase tracking-[.14em] text-slate-500">
-                Portfolio snapshot
-              </p>
-              <dl className="mt-5 grid grid-cols-2 gap-4">
-                <div>
-                  <dt className="text-sm text-slate-500">Companies</dt>
-                  <dd className="mt-1 text-3xl font-black dark:text-white">100</dd>
+            <div className="relative rounded-[2rem] border border-white/80 bg-slate-950 p-4 shadow-2xl shadow-violet-500/15 dark:border-violet-950">
+              <div className="rounded-[1.4rem] border border-white/10 bg-gradient-to-br from-violet-500/20 via-slate-950 to-cyan-400/10 p-6 text-white">
+                <div className="flex items-center justify-between"><p className="text-xs font-black uppercase tracking-[.18em] text-violet-200">Interface quality signals</p><span className="rounded-full bg-emerald-400/15 px-2.5 py-1 text-xs font-bold text-emerald-200">A11y-first</span></div>
+                <div className="mt-8 grid grid-cols-2 gap-3">
+                  {[['100','companies'],['2','density modes'],['2','explorer views'],['90%','coverage gate']].map(([value,label]) => <div key={label} className="rounded-2xl border border-white/10 bg-white/5 p-4"><p className="text-3xl font-black">{value}</p><p className="mt-1 text-xs text-slate-300">{label}</p></div>)}
                 </div>
-                <div>
-                  <dt className="text-sm text-slate-500">Markets</dt>
-                  <dd className="mt-1 text-3xl font-black dark:text-white">20</dd>
-                </div>
-                <div>
-                  <dt className="text-sm text-slate-500">Insight tabs</dt>
-                  <dd className="mt-1 text-3xl font-black dark:text-white">7</dd>
-                </div>
-                <div>
-                  <dt className="text-sm text-slate-500">Security controls</dt>
-                  <dd className="mt-1 text-3xl font-black dark:text-white">6+</dd>
-                </div>
-              </dl>
-              <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm leading-6 text-slate-600 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-300">
-                Synthetic local data keeps the portfolio demo reproducible while the secure explainer route can
-                connect to the OpenAI Responses API.
+                <div className="mt-4 rounded-2xl border border-cyan-300/20 bg-cyan-300/5 p-4 text-sm leading-6 text-slate-200">The visual layer is deliberately different from the fullstack edition: glass surfaces, violet/cyan hierarchy, command-driven navigation and user-controlled information density.</div>
               </div>
-            </Card>
+            </div>
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl space-y-14 px-5 py-14 lg:px-8">
-          <CompanyMap />
-          <SecurityPanel />
+        <section className="mx-auto max-w-7xl px-5 py-14 lg:px-8">
+          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+            {qualities.map(([title, detail]) => <article key={title} className="rounded-[1.5rem] border border-violet-100 bg-white/80 p-5 shadow-sm dark:border-violet-950 dark:bg-slate-950"><h2 className="font-black text-slate-950 dark:text-white">{title}</h2><p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">{detail}</p></article>)}
+          </div>
+          <div className="mt-14 space-y-14"><CompanyMap /><SecurityPanel /></div>
         </section>
       </main>
-      <footer className="border-t border-slate-200 px-5 py-8 text-center text-sm text-slate-500 dark:border-slate-800">
-        CompanyScope · Portfolio project by Deniz Aslaner
-      </footer>
+      <footer className="border-t border-violet-100 px-5 py-8 text-center text-sm text-slate-500 dark:border-violet-950">CompanyScope Frontend · React interaction and design-system portfolio</footer>
     </>
   );
 }

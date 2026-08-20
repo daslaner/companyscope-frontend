@@ -1,10 +1,13 @@
 export type ProductEvent =
   | { name: 'company_searched'; properties: { queryLength: number; resultCount: number } }
-  | { name: 'company_opened'; properties: { companyId: string; source: 'table' | 'map' | 'saved' } }
+  | { name: 'company_opened'; properties: { companyId: string; source: 'table' | 'map' | 'saved' | 'cards' } }
   | { name: 'company_tab_opened'; properties: { companyId: string; tab: string } }
   | { name: 'explainer_requested'; properties: { companyId: string; focus: string } }
   | { name: 'company_saved'; properties: { companyId: string; saved: boolean } }
-  | { name: 'workspace_created'; properties: { source: string } };
+  | { name: 'workspace_created'; properties: { source: string } }
+  | { name: 'view_mode_changed'; properties: { view: 'table' | 'cards' } }
+  | { name: 'density_changed'; properties: { density: 'comfortable' | 'compact' } }
+  | { name: 'command_palette_used'; properties: { source: 'command' | 'company'; companyId: string | null } };
 
 export interface AnalyticsPort {
   track(event: ProductEvent): void;

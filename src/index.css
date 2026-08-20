@@ -2,19 +2,21 @@
 @import "leaflet/dist/leaflet.css";
 @custom-variant dark (&:where(.dark, .dark *));
 
-:root { --chart-1: #2563eb; --chart-2: #0f766e; --chart-3: #7c3aed; --chart-4: #d97706; --chart-5: #dc2626; --chart-grid: #e2e8f0; --chart-text: #64748b; --chart-label: #0f172a; --chart-surface: #ffffff; --chart-tooltip-bg: #ffffff; --chart-hover: #f1f5f9; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-synthesis: none; text-rendering: optimizeLegibility; background: #f8fafc; }
+:root { --chart-1: #7c3aed; --chart-2: #0891b2; --chart-3: #db2777; --chart-4: #4f46e5; --chart-5: #e11d48; --chart-grid: #e9e5ff; --chart-text: #64748b; --chart-label: #17132e; --chart-surface: #ffffff; --chart-tooltip-bg: #ffffff; --chart-hover: #f5f3ff; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-synthesis: none; text-rendering: optimizeLegibility; background: #f7f5ff; }
 html { scroll-behavior: smooth; }
-body { margin: 0; min-width: 320px; min-height: 100vh; background: #f8fafc; color: #0f172a; }
-html.dark { --chart-1: #60a5fa; --chart-2: #2dd4bf; --chart-3: #a78bfa; --chart-4: #fbbf24; --chart-5: #fb7185; --chart-grid: #334155; --chart-text: #94a3b8; --chart-label: #f8fafc; --chart-surface: #0f172a; --chart-tooltip-bg: #0f172a; --chart-hover: #1e293b; }
-html.dark body { background: #020617; color: #e2e8f0; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: linear-gradient(180deg,#faf9ff 0,#f7f5ff 42rem,#f8fafc 100%); color: #0f172a; }
+html.dark { --chart-1: #a78bfa; --chart-2: #22d3ee; --chart-3: #f472b6; --chart-4: #818cf8; --chart-5: #fb7185; --chart-grid: #312e55; --chart-text: #a8a4c7; --chart-label: #f8fafc; --chart-surface: #090817; --chart-tooltip-bg: #111027; --chart-hover: #1d1b3a; }
+html.dark body { background: linear-gradient(180deg,#020617 0,#08071b 42rem,#020617 100%); color: #e2e8f0; }
 * { box-sizing: border-box; }
-::selection { background: #bfdbfe; color: #172554; }
-:focus-visible { outline: 3px solid #2563eb; outline-offset: 3px; }
+::selection { background: #ddd6fe; color: #2e1065; }
+:focus-visible { outline: 3px solid #7c3aed; outline-offset: 3px; }
 .skip-link { position: fixed; left: -999px; top: 0; }
-.skip-link:focus { left: 1rem; top: 1rem; z-index: 2000; border-radius: .75rem; background: white; padding: .75rem 1rem; color: #0f172a; box-shadow: 0 10px 30px rgb(15 23 42 / .2); }
-.field { display: block; min-height: 44px; width: 100%; border-radius: .75rem; border: 1px solid #cbd5e1; background: #fff; padding: .6rem .75rem; color: #0f172a; font-size: .875rem; }
-.dark .field { border-color: #475569; background: #0f172a; color: #f8fafc; }
-.field-label { display: block; font-size: .875rem; font-weight: 600; color: #334155; }
+.skip-link:focus { left: 1rem; top: 1rem; z-index: 4000; border-radius: .9rem; background: white; padding: .75rem 1rem; color: #2e1065; box-shadow: 0 10px 30px rgb(76 29 149 / .2); }
+.field { display: block; min-height: 44px; width: 100%; border-radius: .9rem; border: 1px solid #ddd6fe; background: rgb(255 255 255 / .9); padding: .6rem .75rem; color: #0f172a; font-size: .875rem; transition: border-color .15s, box-shadow .15s; }
+.field:focus { border-color: #8b5cf6; box-shadow: 0 0 0 3px rgb(139 92 246 / .12); outline: none; }
+.dark .field { border-color: #4c1d95; background: #0f172a; color: #f8fafc; }
+.field-label { display: block; font-size: .875rem; font-weight: 700; color: #334155; }
 .dark .field-label { color: #cbd5e1; }
-.leaflet-container { font-family: inherit; }
+.leaflet-container { font-family: inherit; filter: saturate(.88) hue-rotate(12deg); }
+html[data-density='compact'] main [data-density-sensitive='true'] { padding-top: .5rem; padding-bottom: .5rem; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .001ms !important; animation-duration: .001ms !important; animation-iteration-count: 1 !important; } }

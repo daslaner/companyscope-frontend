@@ -6,6 +6,7 @@ import App from './App';
 import { AuthProvider } from './auth/AuthProvider';
 import './index.css';
 import { ThemeProvider } from './theme/ThemeProvider';
+import { WorkspacePreferencesProvider } from './frontend/preferences';
 
 const rootElement = document.getElementById('root');
 
@@ -28,7 +29,9 @@ createRoot(rootElement).render(
       <BrowserRouter>
         <ThemeProvider>
           <AuthProvider>
-            <App />
+            <WorkspacePreferencesProvider>
+              <App />
+            </WorkspacePreferencesProvider>
           </AuthProvider>
         </ThemeProvider>
       </BrowserRouter>

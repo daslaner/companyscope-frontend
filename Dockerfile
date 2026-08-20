@@ -4,10 +4,10 @@ ARG APP_VERSION=1.0.0
 ARG VCS_REF=unknown
 
 LABEL org.opencontainers.image.title="CompanyScope" \
-      org.opencontainers.image.description="CompanyScope fullstack portfolio application" \
+      org.opencontainers.image.description="CompanyScope frontend engineering portfolio application" \
       org.opencontainers.image.version="$APP_VERSION" \
       org.opencontainers.image.revision="$VCS_REF" \
-      org.opencontainers.image.source="https://github.com/daslaner/companyscope-fullstack"
+      org.opencontainers.image.source="https://github.com/daslaner/companyscope-frontend"
 
 WORKDIR /app
 

@@ -323,7 +323,7 @@ const sweepTimer = setInterval(() => sessions.sweep(), 15 * 60 * 1000);
 sweepTimer.unref();
 
 server.listen(port, host, () => {
-  console.log(`CompanyScope fullstack server listening on http://${host}:${port}`);
+  console.log(`CompanyScope frontend runtime listening on http://${host}:${port}`);
 });
 
 function shutdown(signal: NodeJS.Signals) {

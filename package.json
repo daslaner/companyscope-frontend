@@ -69,8 +69,9 @@
     "vite": "^8.2.0",
     "vitest": "4.1.10"
   },
-  "name": "companyscope-product",
+  "name": "companyscope-frontend",
   "engines": {
     "node": ">=24.15.0 <25"
-  }
+  },
+  "description": "Senior frontend engineering portfolio: accessible company intelligence SaaS with adaptive UI, design system and production-grade delivery."
 }
