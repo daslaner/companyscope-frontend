@@ -12,7 +12,7 @@ export function Badge({ children, tone = 'neutral' }: PropsWithChildren<{ tone?:
           tone === 'positive',
         'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-200': tone === 'warning',
         'bg-red-100 text-red-800 dark:bg-red-950 dark:text-red-200': tone === 'danger',
-        'bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-200': tone === 'accent',
+        'bg-violet-100 text-violet-800 dark:bg-violet-950 dark:text-violet-200': tone === 'accent',
       })}
     >
       {children}
